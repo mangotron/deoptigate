@@ -6,18 +6,18 @@ const summarizeFile = require('../../lib/grouping/summarize-file')
 const assert = require('assert')
 
 const severityClassNames = [
-    'green i'
-  , 'blue'
-  , 'red b'
+    'green i tc'
+  , 'blue tc'
+  , 'red b tc'
 ]
 
-const underlineTdClass = ' bb b--silver pt2 pb2'
+const underlineTdClass = ' pl2 pr2 underlined '
 
 function coloredTds(arr) {
   return arr.map((x, idx) => {
     const className = x > 0
       ? severityClassNames[idx] + ' tr' + underlineTdClass
-      : 'silver i tr' + underlineTdClass
+      : ' pl2 pr2 tc' + underlineTdClass
     return <td key={idx} className={className}>{x}</td>
   })
 }
@@ -69,7 +69,7 @@ class FilesView extends Component {
   }
 
   _renderTableHeader() {
-    const topHeaderClass = 'bt br bl bw1 b--silver bg-light-green tc br1'
+    const topHeaderClass = 'tc header-row'
     const subHeaderClass = 'bb br bl bw1 b--silver br1'
     return (
       <thead>
@@ -105,9 +105,9 @@ class FilesView extends Component {
     const onfileClicked = this._onfileClicked.bind(this, file)
     const selectedClass = file === selectedFile ? 'bg-light-yellow' : ''
     return (
-      <tr key={relativePath} className={'bb b--silver ' + selectedClass}>
-        <td>
-          <a className={'i silver' + underlineTdClass}
+      <tr key={relativePath} className={'normalrow ' + selectedClass}>
+        <td class="underlined">
+          <a className={'items pl2 pr2'}
             href='#'
             onClick={onfileClicked}>
             {relativePath}
