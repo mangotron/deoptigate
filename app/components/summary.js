@@ -286,7 +286,7 @@ class SummaryView extends Component {
 
     return (
       <tr key={timestamp}>
-        <td>{timeStampMs + ' pr3'}ms</td>
+        <td>{timeStampMs}ms</td>
         <td className={codeStateClassName + ' pr3'}>{codeState}</td>
       </tr>
     )
