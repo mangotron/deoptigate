@@ -20,9 +20,13 @@ body {
 =================================================== */
 
 .b {font-weight:600;}
-.green { color: #5ac878;}
-.blue { color: #4cb5ff;}
-.red { color: #ff6040;}
+
+.green {color: #5ac878;}
+.blue {color: #4cb5ff;}
+.red {color: #ff6040;}
+.basegreen {color: #4a5859;}
+
+.bg-light-green {background-color: #e1e7e6;}
 
 
 /* ===================================================
@@ -39,6 +43,13 @@ text-transform: uppercase;
 font-size:1.1em;
 color: #ffffff;
 }
+
+.subhead {
+background-color:#353d3e;
+font-size: 0.9em;
+color: #ffffff;
+}
+
 
 tbody {
 	background-color: #e1e7e6

@@ -69,17 +69,18 @@ class FilesView extends Component {
   }
 
   _renderTableHeader() {
-    const topHeaderClass = 'tc header-row'
-    const subHeaderClass = 'bb br bl bw1 b--silver br1'
+    const topHeaderClass = 'tc header-row pt2 pb1 '
+    const subHeaderClass = 'pa1 pl2 pr2 subhead'
     return (
       <thead>
         <tr>
-          <td className={topHeaderClass + ' bb'} rowSpan='2'>File</td>
+          <td className={topHeaderClass + ' '}>File</td>
           <td colSpan='3' className={topHeaderClass}>Optimizations</td>
           <td colSpan='3' className={topHeaderClass}>Deoptimizations</td>
           <td colSpan='3' className={topHeaderClass}>Inline Caches</td>
         </tr>
         <tr>
+		  <td className={subHeaderClass}> </td>        
           <td className={subHeaderClass}>Optimized</td>
           <td className={subHeaderClass}>Optimizable</td>
           <td className={subHeaderClass}>Compiled</td>
