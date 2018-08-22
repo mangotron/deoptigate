@@ -180,7 +180,7 @@ class SummaryView extends Component {
     const rows = info.updates.map((update, idx) => this._deoptRow(update, idx))
     return (
       <table key={'deopt:' + info.id}>
-        <thead className='f5 b tc pt2'>
+        <thead className='f5 b pt2'>
           <tr>
             <td class="pt2 pr3 basegreen">Timestamp</td>
             <td class="pt2 pr3 basegreen">Bailout</td>
@@ -207,10 +207,10 @@ class SummaryView extends Component {
     const timeStampMs = (timestamp / 1E3).toFixed()
     return (
       <tr key={timestamp}>
-        <td>{timeStampMs}ms</td>
-        <td className={bailoutClassName}>{bailoutType}</td>
-        <td className='tr'>{deoptReason}</td>
-        <td className='gray tr'>{inlined ? 'yes' : 'no'}</td>
+        <td>{timeStampMs + ' pr3'}ms</td>
+        <td className={bailoutClassName + ' pr3'}>{bailoutType}</td>
+        <td className='pr3'>{deoptReason}</td>
+        <td className='gray pr3'>{inlined ? 'yes' : 'no'}</td>
       </tr>
     )
   }
@@ -219,7 +219,7 @@ class SummaryView extends Component {
     const rows = info.updates.map((update, idx) => this._icRow(update, idx))
     return (
       <table key={'ic:' + info.id}>
-        <thead className='f5 b tc'>
+        <thead className='f5 b '>
           <tr>
             <td class="pt2 pr3 basegreen">Old State</td>
             <td class="pt2 pr3 basegreen">New State</td>
@@ -252,10 +252,10 @@ class SummaryView extends Component {
     const mapString = `0x${map}`
     return (
       <tr key={key + id}>
-        <td className={oldStateClassName}>{oldStateName}</td>
-        <td className={newStateClassName}>{newStateName}</td>
-        <td className='black tl'>{key}</td>
-        <td className='gray tr'>{mapString}</td>
+        <td className={oldStateClassName + ' pr3'}>{oldStateName}</td>
+        <td className={newStateClassName + ' pr3'}>{newStateName}</td>
+        <td className='black pr3'>{key}</td>
+        <td className='gray pr3'>{mapString}</td>
       </tr>
     )
   }
@@ -264,7 +264,7 @@ class SummaryView extends Component {
     const rows = info.updates.map((update, idx) => this._codeRow(update, idx))
     return (
       <table key={'code:' + info.id}>
-        <thead className='f5 b tc'>
+        <thead className='f5 b '>
           <tr>
             <td class="pt2 pr3 basegreen">Timestamp</td>
             <td class="pt2 pr3 basegreen">Optimization State</td>
@@ -286,8 +286,8 @@ class SummaryView extends Component {
 
     return (
       <tr key={timestamp}>
-        <td>{timeStampMs}ms</td>
-        <td className={codeStateClassName}>{codeState}</td>
+        <td>{timeStampMs + ' pr3'}ms</td>
+        <td className={codeStateClassName + ' pr3'}>{codeState}</td>
       </tr>
     )
   }
