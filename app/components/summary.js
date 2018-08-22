@@ -88,7 +88,7 @@ class SummaryView extends Component {
     const selected = idx === selectedTabIdx
     const baseClass = 'flex flex-column ttu dib link pa3 bt outline-0 tab-header'
     const selectedClass = 'b--blue blue'
-    const unselectedClass = 'black b--white'
+    const unselectedClass = 'white b--white'
     const className = selected ? `${baseClass} ${selectedClass}` : `${baseClass} ${unselectedClass}`
 
     return <a className={className} href='#' onClick={() => this._ontabHeaderClicked(idx)}>{label}</a>
@@ -102,7 +102,7 @@ class SummaryView extends Component {
       const info = data.get(loc)
       if (!includeAllSeverities && info.severity <= MIN_SEVERITY) continue
 
-      const highlightedClass = selectedLocation === info.id ? 'bg-light-yellow' : 'bg-light-gray'
+      const highlightedClass = selectedLocation === info.id ? 'bg-light-yellow' : 'bg-light-green'
       const className = `${highlightedClass} ba br2 bw1 ma3 pa2`
       rendered.push(
         <div className={className} key={info.id}>
@@ -163,7 +163,7 @@ class SummaryView extends Component {
 
     const fullLoc = (
       <a href='#'
-        className='i gray'
+        className='i items'
         onClick={onclicked}>
         {functionName} at {relativePath}:{line}:{column}
       </a>
@@ -180,12 +180,12 @@ class SummaryView extends Component {
     const rows = info.updates.map((update, idx) => this._deoptRow(update, idx))
     return (
       <table key={'deopt:' + info.id}>
-        <thead className='f5 b tc'>
+        <thead className='f5 b tc pt2'>
           <tr>
-            <td>Timestamp</td>
-            <td>Bailout</td>
-            <td>Reason</td>
-            <td>Inlined</td>
+            <td class="pt2 pr3 basegreen">Timestamp</td>
+            <td class="pt2 pr3 basegreen">Bailout</td>
+            <td class="pt2 pr3 basegreen">Reason</td>
+            <td class="pt2 pr3 basegreen">Inlined</td>
           </tr>
         </thead>
         <tbody>
@@ -221,10 +221,10 @@ class SummaryView extends Component {
       <table key={'ic:' + info.id}>
         <thead className='f5 b tc'>
           <tr>
-            <td>Old State</td>
-            <td>New State</td>
-            <td>Key</td>
-            <td>Map</td>
+            <td class="pt2 pr3 basegreen">Old State</td>
+            <td class="pt2 pr3 basegreen">New State</td>
+            <td class="pt2 pr3 basegreen">Key</td>
+            <td class="pt2 pr3 basegreen">Map</td>
           </tr>
         </thead>
         <tbody>
@@ -266,8 +266,8 @@ class SummaryView extends Component {
       <table key={'code:' + info.id}>
         <thead className='f5 b tc'>
           <tr>
-            <td>Timestamp</td>
-            <td>Optimization State</td>
+            <td class="pt2 pr3 basegreen">Timestamp</td>
+            <td class="pt2 pr3 basegreen">Optimization State</td>
           </tr>
         </thead>
         <tbody>
